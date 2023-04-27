@@ -67,7 +67,7 @@ namespace csharp_fundamentals_methods.Main
             10, 13 | [10,11,12,13]
             -1, 1  | [-1,0,1]
          */
-        public int[] ConstructNumberArray(int lower, int upper)
+        public int[] constructNumberArray(int lower, int upper)
         {
             int[] results = new int[(upper - lower) +1];
             int counter = 0;
