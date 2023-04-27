@@ -24,7 +24,7 @@ namespace csharp_fundamentals_methods.Test
             Assert.AreEqual(1, this.exercise.increment(0));
             Assert.AreEqual(6, this.exercise.increment(5));
         }
-
+            
         [Test]
         public void shouldFriendlyGreet()
         {
