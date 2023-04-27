@@ -18,7 +18,7 @@ namespace csharp_fundamentals_methods.Test
         }
         [Test]
         public void one()
-        {
+            {
             Assert.AreEqual("The cake is ready!", this._extension.timerStatus(0));
             Assert.AreEqual("The cake is still baking!", this._extension.timerStatus(1));
             Assert.AreEqual("The cake is still baking!", this._extension.timerStatus(23));
