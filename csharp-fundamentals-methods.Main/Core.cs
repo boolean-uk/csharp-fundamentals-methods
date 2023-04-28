@@ -37,10 +37,7 @@ namespace csharp_fundamentals_methods.Main
         /*
             Complete this method so that it increases the number given by 1 and returns the result
          */
-        public int increment(int number)
-        {
-            return number + 1;
-        }
+        public int increment(int number) => ++number;
 
         //TODO: 2. Construct a friendly greeting
         /*
@@ -51,9 +48,9 @@ namespace csharp_fundamentals_methods.Main
             Nathan | Hi, Nathan :)
             Edward | Hi, Edward :)
          */
-        public string happilyGreet()
+        public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            return $"Hi, {name} :)";
         }
 
         //TODO: 3. Construct an array of numbers
@@ -67,6 +64,16 @@ namespace csharp_fundamentals_methods.Main
             10, 13 | [10,11,12,13]
             -1, 1  | [-1,0,1]
          */
+
+        public static int[] constructNumberArray(int lower, int upper)
+        {
+            int[] result = new int[upper - lower + 1];
+            for (int i = 0; i < result.Length; i++)
+            {
+                result[i] = lower + i;
+            }
+            return result;
+        }
 
 
 
@@ -82,7 +89,15 @@ namespace csharp_fundamentals_methods.Main
             disaster, 5 | DISASTER!!!!!
             error, 10   | ERROR!!!!!!!!!!
          */
-
+        public string shout(string input, int exclamationMarks)
+        {
+            string result = input.ToUpper();
+            for (int i = 0; i < exclamationMarks; i++)
+            {
+                result += "!";
+            }
+            return result;
+        }
 
 
 

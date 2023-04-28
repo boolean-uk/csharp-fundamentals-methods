@@ -36,7 +36,7 @@ namespace csharp_fundamentals_methods.Test
         [Test]
         public void shouldConstructNumberArray()
         {
-            int[] nums = this.exercise.constructNumberArray(10, 13);
+            int[] nums = Core.constructNumberArray(10, 13);
             Assert.AreEqual(4, nums.Length);
             Assert.AreEqual(10, nums[0]);
             Assert.AreEqual(11, nums[1]);
