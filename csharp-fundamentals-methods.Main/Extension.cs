@@ -16,9 +16,15 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+            { return "The cake is ready!"; }
+            else if (minutes < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            else { return "The cake is still baking!"; }
         }
 
 
@@ -31,10 +37,16 @@ namespace csharp_fundamentals_methods.Main
             provided and the prep time per ingredient.
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
-
-        public double estimatePrepTime(string[] strings, int v)
+        public int estimatePrepTime(string[] ingredients, int timePerIngredient)
         {
-            throw new NotImplementedException();
+            if (timePerIngredient == 0)
+            {
+                return ingredients.Length * 2;
+            }
+            else
+            {
+                return ingredients.Length * timePerIngredient;
+            }
         }
 
 
@@ -47,14 +59,16 @@ namespace csharp_fundamentals_methods.Main
             The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
             The method should return the number of grams of sugar needed to make the cake.
          */
-
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public int calculateGramsOfSugar(string[] ingredients, int cakeLayers)
         {
-            throw new NotImplementedException();
+            if (ingredients.Contains("sugar"))
+            {
+                return 100 * cakeLayers;
+            }
+            else
+            {
+                return 0;
+            }
         }
-
-
-
-
-    }
+     }
 }
