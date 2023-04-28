@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,7 +41,7 @@ namespace csharp_fundamentals_methods.Main
          */
         public int increment(int number)
         {
-            return number + 1;
+            return number += 1;
         }
 
         //TODO: 2. Construct a friendly greeting
@@ -51,10 +53,13 @@ namespace csharp_fundamentals_methods.Main
             Nathan | Hi, Nathan :)
             Edward | Hi, Edward :)
          */
-        public string happilyGreet()
+        public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            return "Hi, " + name + " :)";
         }
+
+      
+
 
         //TODO: 3. Construct an array of numbers
         /*
@@ -67,6 +72,17 @@ namespace csharp_fundamentals_methods.Main
             10, 13 | [10,11,12,13]
             -1, 1  | [-1,0,1]
          */
+        public int[] constructNumberArray(int lower, int upper)
+        {
+            int[] numberArray = new int[upper - lower + 1];
+            int counter = 0;
+           for (int i = lower; i <= upper; i++)
+            {
+                numberArray[counter++] = i;
+            }
+           return numberArray;
+        }
+
 
 
 
@@ -85,6 +101,15 @@ namespace csharp_fundamentals_methods.Main
 
 
 
+        public object? shout(string word, int exlemations)
+        {
+            string exclamations = "";
+            for (int i = 0; i < exlemations; i++)
+            {
+                exclamations += "!";
+            }
+            return word.ToUpper() + exclamations;
+        }
 
     }
 }
