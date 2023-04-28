@@ -51,9 +51,9 @@ namespace csharp_fundamentals_methods.Main
             Nathan | Hi, Nathan :)
             Edward | Hi, Edward :)
          */
-        public string happilyGreet()
+        public string happilyGreet(string v)
         {
-            throw new NotImplementedException();
+            return "Hi, " + v + " :)";
         }
 
         //TODO: 3. Construct an array of numbers
@@ -68,9 +68,22 @@ namespace csharp_fundamentals_methods.Main
             -1, 1  | [-1,0,1]
          */
 
+        public int[] constructNumberArray(int lower, int upper)
+        {
+            int[] arr = new int[upper - lower + 1];
+            int x = 0;
+            for (int i = lower; i <= upper; i++)
+            {
+                arr[x] = i;
+                x++;
+            }
+            return arr;
 
+        /*List<int> ints = new List<int>();
+            ints.Add(10);
+            ints.Where(x =>  x > 10).ToList();*/
 
-
+        }
         //TODO: 4. Shout at a dev
         /*
             Create a method named shout that accepts a string and a whole number.
@@ -83,8 +96,16 @@ namespace csharp_fundamentals_methods.Main
             error, 10   | ERROR!!!!!!!!!!
          */
 
+        public string shout(string input, int amount)
+        {
 
+            for (int i = 0; i < amount; i++)
+            {
+                input = input + "!";
+            }
 
-
+            string word = input.ToUpper();
+            return word;
+        }
     }
 }
