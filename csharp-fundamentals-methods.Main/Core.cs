@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,19 +26,37 @@ namespace csharp_fundamentals_methods.Main
             logic. See the example below and take some time to break it down and understand it.
          */
 
-        //TODO: 1. Create a method that accepts a name and returns a greeting      
-        public string greet(string name)
+        //TODO: 1. Create a method that accepts a name and returns a greeting
+
+        Greetings person = new Greetings()
         {
-            throw new NotImplementedException();
+            Name = "Nathan"
+        };
+
+
+
+
+        public string greet(string Name)
+        {
+            string greetingAndName = "Hello " + Name +"!";
+            return greetingAndName;
+            //throw new NotImplementedException();
         }
 
         //TODO: 2. Increment a number
         /*
             Complete this method so that it increases the number given by 1 and returns the result
          */
+
+        Numbers numbers = new Numbers()
+        {
+            Increment = 0,
+        };
         public int increment(int number)
         {
-            throw new NotImplementedException();
+            int addingOne = number + 1;
+            return addingOne;
+            //throw new NotImplementedException();
         }
 
         //TODO: 3. Construct a friendly greeting
@@ -48,9 +68,11 @@ namespace csharp_fundamentals_methods.Main
             Nathan | Hi, Nathan :)
             Edward | Hi, Edward :)
          */
-        public string happilyGreet(string name)
+        public string happilyGreet(string Name)
         {
-            throw new NotImplementedException();
+            string smileyGreeting = "Hi, " + Name + " :)";
+            return smileyGreeting;
+            //throw new NotImplementedException();
         }
 
 
@@ -67,14 +89,27 @@ namespace csharp_fundamentals_methods.Main
             -1, 1  | [-1,0,1]
          */
 
+        Numbers Construct = new Numbers()
+        {
+            lower = 1,
+            upper = 12,
+        };
+        
         public int[] constructNumberArray(int lower, int upper)
         {
+            int arrayLength = upper - lower + 1;                       
+            int[] numbers = new int[arrayLength];
+            for (int i = 0; i < arrayLength; i++)
+            {
+                numbers[i] = lower + i;
+            }
 
-            int[] resultArray = { };
+             return numbers;
+            }
 
-            return resultArray;
 
-        }
+
+
 
 
 
@@ -90,9 +125,15 @@ namespace csharp_fundamentals_methods.Main
             error, 10   | ERROR!!!!!!!!!!
          */
 
+        Greetings Shouting = new Greetings()
+        {
+            phrase = "you are fired",
+            number = 6,
+        };
         public string shout(string phrase, int number)
         {
-            return $"";
+            string newPhrase = phrase.ToUpper() + new string('!', number);
+            return newPhrase;
         }
 
 
