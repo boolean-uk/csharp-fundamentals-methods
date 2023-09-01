@@ -17,9 +17,20 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if (minutes == 0)
+            {
+                return "The cake is ready!";
+            }
+            else if (minutes > 0)
+            {
+                return "The cake is still baking!";
+            }           
+            else
+            {
+                return "The timer finished ages ago!";
+            }      
         }
 
 
@@ -33,10 +44,11 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
-        {
-            throw new NotImplementedException();
-        }
+        public double estimatePrepTime(string[] ingredients, int time)
+            {
+                int perIngreTime = (time == 0) ? 2 : time; //check if time is zero, if time is zero then two is asigned to perIngreTime,otherwise the time is asigned to perIngreTime
+                return ingredients.Length * perIngreTime; // return the amount of ingredients multiplied by the prep time
+            }
 
 
 
@@ -49,9 +61,17 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public double calculateGramsOfSugar(string[] ingredients, int layers)
         {
-            throw new NotImplementedException();
+            bool hasItSugar = Array.Exists(ingredients, ingredient => ingredient.ToLower() == "sugar"); // Checking if sugar exists in array. ToLower to be sure the sugar is case-insinsitive
+            if (hasItSugar)
+            {
+                return layers * 100;      //for 100 gram is each layer
+            }
+            else
+            {
+                return 0;
+            }
         }
 
 
