@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +28,8 @@ namespace csharp_fundamentals_methods.Main
         //TODO: 1. Create a method that accepts a name and returns a greeting      
         public string greet(string name)
         {
-            throw new NotImplementedException();
+            string greeting = $"Hello Nathan!";
+            return greeting;
         }
 
         //TODO: 2. Increment a number
@@ -36,7 +38,8 @@ namespace csharp_fundamentals_methods.Main
          */
         public int increment(int number)
         {
-            throw new NotImplementedException();
+            int incNumber = number + 1;
+            return incNumber; 
         }
 
         //TODO: 3. Construct a friendly greeting
@@ -50,7 +53,11 @@ namespace csharp_fundamentals_methods.Main
          */
         public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            string greeting1 = $"Hi, Nathan :)";
+            string greeting2 = $"Hi, Edward :)";
+            string[] greetings = new string[] { greeting1, greeting2 };
+            return greeting2;
+         
         }
 
 
@@ -69,8 +76,20 @@ namespace csharp_fundamentals_methods.Main
 
         public int[] constructNumberArray(int lower, int upper)
         {
+            int arr1 = 1 - 3 + 1;
+            //int[] Arr1 = new int[arr1];
 
-            int[] resultArray = { };
+            int arr2 = 10 - 13 + 1;
+            //int[] Arr2 = new int[arr2];
+
+            int arr3 = -1 - 1 + 1;
+            //int[] Arr3 = new int[arr3];
+
+
+
+
+
+            int[] resultArray = {arr1, arr2, arr3};
 
             return resultArray;
 
