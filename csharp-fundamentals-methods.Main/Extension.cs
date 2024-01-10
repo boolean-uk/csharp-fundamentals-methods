@@ -17,9 +17,19 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            if (v == 0)
+            {
+                return "The cake is ready!";
+            }
+            else if (v > 0){
+                return "The cake is still baking!";
+            }
+            else
+            {
+                return "The timer finished ages ago!";
+            }
         }
 
 
@@ -35,7 +45,13 @@ namespace csharp_fundamentals_methods.Main
 
         public double estimatePrepTime(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            if (v == 0)
+            {
+                return strings.Length * 2;
+            } else
+            {
+                return strings.Length * v;
+            }
         }
 
 
@@ -51,7 +67,19 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            double result = 0;
+            if (strings[0] == "sugar")
+            {
+                result = v * 100;
+            } else if (strings[1] == "sugar")
+            {
+                result = v * 100;
+            } else if (strings[2] == "sugar")
+            {
+                result = v * 100;
+            }
+
+            return result;
         }
 
 
