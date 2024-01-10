@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using csharp_fundamentals_methods.Main;
+
+Core core = new Core();
+Extension extension = new Extension();
