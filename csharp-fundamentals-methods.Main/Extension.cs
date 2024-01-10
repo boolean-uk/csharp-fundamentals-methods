@@ -66,15 +66,17 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] strings, int v)
         {
+            return (strings.Contains("sugar")) ? 100 * v : 0;
             //throw new NotImplementedException();
-            foreach (string s in strings)
-            {
-                if (s == "sugar")
-                {
-                    return 100 * v;
-                }
-            }
-            return 0;
+
+            //foreach (string s in strings)
+            //{
+            //    if (s == "sugar")
+            //    {
+            //        return 100 * v;
+            //    }
+            //}
+            //return 0;
         }
 
 
