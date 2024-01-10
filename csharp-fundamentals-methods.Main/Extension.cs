@@ -17,7 +17,7 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutes)
         {
             throw new NotImplementedException();
         }
