@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp_fundamentals_methods.Main
+﻿namespace csharp_fundamentals_methods.Main
 {
     public class Extension
     {
@@ -17,9 +11,20 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            if(minutes == 0)
+            {
+                return "The cake is ready!";
+            }
+            else if(minutes > 0)
+            {
+                return "The cake is still baking!";
+            }
+            else
+            {
+                return "The timer finished ages ago!";
+            }
         }
 
 
@@ -33,9 +38,10 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public double estimatePrepTime(string[] ingredients , int prepTimeForIng)
         {
-            throw new NotImplementedException();
+            int prepTime = prepTimeForIng == 0 ? 2 : prepTimeForIng;
+            return ingredients.Length * prepTime;
         }
 
 
@@ -49,9 +55,14 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public double calculateGramsOfSugar(string[] ingredients , int layer)
         {
-            throw new NotImplementedException();
+            int sugarNeeded = 0;
+            if(ingredients.Contains("sugar"))
+            {
+                sugarNeeded = layer * 100;
+            }
+            return sugarNeeded;
         }
 
 
