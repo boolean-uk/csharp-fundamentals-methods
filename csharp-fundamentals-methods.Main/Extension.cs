@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace csharp_fundamentals_methods.Main
 {
@@ -17,9 +18,13 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException()
+            string ready = "The cake is ready!";
+            if (v == 0) return ready;
+            else if (v >= 1) return "The cake is still baking!";
+            else return "The timer finished ages ago!";
         }
 
 
@@ -35,7 +40,13 @@ namespace csharp_fundamentals_methods.Main
 
         public double estimatePrepTime(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            // Set a default prep time of 2 minutes if 0 is provided
+            int actualPrepTime = (v == 0) ? 2 : v;
+
+            // Calculate the total prep time based on the number of ingredients
+            double totalPrepTime = strings.Length * actualPrepTime;
+
+            return totalPrepTime;
         }
 
 
@@ -51,7 +62,18 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            // Assuming "sugar" is one of the ingredients and it requires 100g per layer
+            double sugarPerLayer = 100;
+
+            // Check if "sugar" is present in the list of ingredients
+            bool hasSugar = Array.Exists(strings, ingredient => ingredient.ToLower() == "sugar");
+
+            // Calculate the total grams of sugar needed based on the number of layers and the presence of sugar
+            double totalGramsOfSugar = hasSugar ? sugarPerLayer * v : 0;
+
+            return totalGramsOfSugar;
         }
 
 
