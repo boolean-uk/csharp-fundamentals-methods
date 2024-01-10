@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +18,23 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            string ready = "The cake is ready!";
+            string baking = "The cake is still baking!";
+            string finished = "The timer finished ages ago!";
+          if (v == 0)
+            {
+                return ready;
+            }
+          else if (v > 0)
+            {
+                return baking;
+            }
+            else
+            {
+                return finished;
+            }
         }
 
 
@@ -35,7 +50,19 @@ namespace csharp_fundamentals_methods.Main
 
         public double estimatePrepTime(string[] strings, int v)
         {
-            throw new NotImplementedException();
+
+            if (v == 0)
+            {
+                return strings.Length * 2;
+            }
+            else if (v != 0)
+            {
+                return strings.Length * v;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
 
@@ -51,7 +78,17 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            int neededsugar = 100;
+
+            if (strings.Contains("sugar") == true)
+            {
+                return neededsugar * v;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
 
