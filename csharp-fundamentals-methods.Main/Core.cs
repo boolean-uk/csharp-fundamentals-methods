@@ -27,7 +27,9 @@ namespace csharp_fundamentals_methods.Main
         //TODO: 1. Create a method that accepts a name and returns a greeting      
         public string greet(string name)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            string defaultGreeting = "Hello ";
+            return defaultGreeting + name + "!";
         }
 
         //TODO: 2. Increment a number
@@ -36,7 +38,9 @@ namespace csharp_fundamentals_methods.Main
          */
         public int increment(int number)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            int numberToReturn = number + 1;
+            return numberToReturn;
         }
 
         //TODO: 3. Construct a friendly greeting
@@ -50,7 +54,11 @@ namespace csharp_fundamentals_methods.Main
          */
         public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            string defaultGreeting = "Hi, ";
+            string endOfGreeting = " :)";
+
+            return defaultGreeting + name + endOfGreeting;
         }
 
 
@@ -69,11 +77,14 @@ namespace csharp_fundamentals_methods.Main
 
         public int[] constructNumberArray(int lower, int upper)
         {
+            int[] resultArray = new int[upper - lower +1];
 
-            int[] resultArray = { };
+            for (int i =0; i<resultArray.Length; i++)
+            {
+                resultArray[i] = lower +i;
+            }
 
             return resultArray;
-
         }
 
 
@@ -92,7 +103,16 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+            string upperCaseString = phrase.ToUpper();
+
+            string exclamationMark = "";
+
+            for (int i = 0; i < number; i++)
+            {
+                exclamationMark += "!";
+            }
+
+            return upperCaseString + exclamationMark;
         }
 
 
