@@ -17,9 +17,20 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int remainingMinutes)
         {
-            throw new NotImplementedException();
+            if (remainingMinutes == 0)
+            {
+                return "The cake is ready!";
+            } 
+            else if (remainingMinutes > 0) 
+            {
+                return "The cake is still baking!";
+            } 
+            else
+            {
+                return "The timer finished ages ago!";
+            }
         }
 
 
@@ -33,10 +44,17 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public double estimatePrepTime(string[] ingredients, int prepTime)
         {
-            throw new NotImplementedException();
+            if (prepTime == 0)
+            {
+                prepTime = 2;
+            }
+
+            double totalPrepTime = prepTime * ingredients.Length;
+            return totalPrepTime;
         }
+
 
 
 
@@ -49,10 +67,28 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public double calculateGramsOfSugar(string[] ingredients, int numLayers)
         {
-            throw new NotImplementedException();
+            double sugarRequired = 0;
+
+            bool sugarPresent = false;
+
+            for (int i = 0; i < ingredients.Length; i++)
+            {
+                if (ingredients[i] == "sugar")
+                {
+                    sugarPresent = true;
+                }
+            }
+
+            if (sugarPresent)
+            {
+                sugarRequired = 100 * numLayers;
+            }
+
+            return sugarRequired;
         }
+
 
 
 
