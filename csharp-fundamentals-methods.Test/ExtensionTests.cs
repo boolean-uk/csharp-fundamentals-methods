@@ -15,11 +15,11 @@ namespace csharp_fundamentals_methods.Test
         public void one()
         {            
             Extension extension = new Extension();
-            Assert.AreEqual("The cake is ready!", extension.timerStatus(0));
-            Assert.AreEqual("The cake is still baking!", extension.timerStatus(1));
-            Assert.AreEqual("The cake is still baking!", extension.timerStatus(23));
-            Assert.AreEqual("The timer finished ages ago!", extension.timerStatus(-1));
-            Assert.AreEqual("The timer finished ages ago!", extension.timerStatus(-25));
+            Assert.AreEqual("The cake is ready!", extension.TimerStatus(0));
+            Assert.AreEqual("The cake is still baking!", extension.TimerStatus(1));
+            Assert.AreEqual("The cake is still baking!", extension.TimerStatus(23));
+            Assert.AreEqual("The timer finished ages ago!", extension.TimerStatus(-1));
+            Assert.AreEqual("The timer finished ages ago!", extension.TimerStatus(-25));
         }
         [Order(2)]
         [Test]
