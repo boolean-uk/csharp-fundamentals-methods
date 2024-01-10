@@ -26,7 +26,6 @@ namespace csharp_fundamentals_methods.Main
                     return "The cake is still baking!";
                     break;
                 case var expression when v < 0:
-                    // code block
                     return "The timer finished ages ago!";
                     break;
                 default:
