@@ -12,7 +12,7 @@ namespace csharp_fundamentals_methods.Main
             A method is a function, a single piece of logic that can run. In c#, a class is a convenient
             encapsulation of related state and behaviour; members contain state (values like ints, strings, etc.),
             and methods perform behaviours. You've been using String methods in previous exercises, now it's time
-            to start writing your own.
+            to start writing your own.3
             Methods are defined by a signature line followed by a set of curly braces. The code inside the curly
             braces is the logic specific to that method, and any variables created in those curly braces
             are not accessible to any other method or class outside that method.
@@ -27,7 +27,8 @@ namespace csharp_fundamentals_methods.Main
         //TODO: 1. Create a method that accepts a name and returns a greeting      
         public string greet(string name)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return $"Hello {name}!";
         }
 
         //TODO: 2. Increment a number
@@ -36,7 +37,8 @@ namespace csharp_fundamentals_methods.Main
          */
         public int increment(int number)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return number + 1;
         }
 
         //TODO: 3. Construct a friendly greeting
@@ -47,13 +49,13 @@ namespace csharp_fundamentals_methods.Main
             -------|-------
             Nathan | Hi, Nathan :)
             Edward | Hi, Edward :)
-         */
+        */
+
         public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return $"Hi, {name} :)";
         }
-
-
 
         //TODO: 4. Construct an array of numbers
         /*
@@ -69,14 +71,13 @@ namespace csharp_fundamentals_methods.Main
 
         public int[] constructNumberArray(int lower, int upper)
         {
-
-            int[] resultArray = { };
-
+            int[] resultArray = new int[upper - lower + 1];
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                resultArray[i] = lower + i;
+            }
             return resultArray;
-
         }
-
-
 
         //TODO: 5. Shout at a dev
         /*
@@ -92,9 +93,13 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+            string shoutPhrase = phrase.ToUpper();
+            for (int i = 0; i < number; i++)
+            {
+                shoutPhrase += "!";
+            }
+            return shoutPhrase;
         }
-
 
     }
 }
