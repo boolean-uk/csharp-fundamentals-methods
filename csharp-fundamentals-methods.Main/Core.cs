@@ -97,7 +97,9 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+            string ex = new string('!', number);
+            string str = phrase.ToUpper() + ex;
+            return str;
         }
 
 
