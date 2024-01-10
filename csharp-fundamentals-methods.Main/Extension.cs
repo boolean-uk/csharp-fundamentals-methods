@@ -46,10 +46,10 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public int estimatePrepTime(string[] strings, int v)
+        public double estimatePrepTime(string[] strings, int v)
         {
             if (v > 0) {
-                return v * strings.Length;
+                return Convert.ToDouble(v * strings.Length);
             } else {
                 return 2 * strings.Length;
             }
