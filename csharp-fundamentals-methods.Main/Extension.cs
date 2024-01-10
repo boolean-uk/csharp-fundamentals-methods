@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +20,20 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutesLeft)
         {
-            throw new NotImplementedException();
+            int minutes = minutesLeft;
+            
+            if (minutes == 0)
+            {
+                return "The cake is ready!";
+            }
+            else if (minutes > 0) {
+                return "The cake is still baking!";
+            } else if (minutes < 0) {
+                return "The timer finished ages ago!";
+            }
+            else { return "I don't think the timer is working..."; }
         }
 
 
@@ -33,9 +47,20 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public int estimatePrepTime(string[] strings, int minutes)
         {
-            throw new NotImplementedException();
+
+            if(minutes > 0)
+            {
+                int PrepTime = strings.Length* minutes;
+                return PrepTime;
+            }
+            else
+            {
+                int PrepTime = strings.Length * 2;
+                return PrepTime;
+            }
+            
         }
 
 
@@ -51,7 +76,18 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            int result = 0;
+
+            foreach(string s in strings)
+            {     
+                if( s == "sugar")
+                {
+                    result += (100 * v);
+
+                  }
+                
+            } 
+           return result;
         }
 
 
