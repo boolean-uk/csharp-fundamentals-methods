@@ -17,9 +17,12 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int v)
         {
-            throw new NotImplementedException();
+            string message = "The timer finished ages ago!";
+            if (v == 0) message = "The cake is ready!";
+            else if (v > 0) message = "The cake is still baking!";
+            return message;
         }
 
 
@@ -33,9 +36,11 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public int estimatePrepTime(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            int time = strings.Length * v;
+            if (v == 0) time = strings.Length * 2;
+            return time;
         }
 
 
@@ -49,9 +54,12 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public int calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            bool hasSugar = strings.Contains("sugar");
+            int sugarNeeded = 0;
+            if (hasSugar) sugarNeeded = v * 100;
+            return sugarNeeded;
         }
 
 
