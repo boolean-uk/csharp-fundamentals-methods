@@ -53,11 +53,8 @@ namespace csharp_fundamentals_methods.Main
          */
         public string happilyGreet(string name)
         {
-            string greeting1 = $"Hi, Nathan :)";
-            string greeting2 = $"Hi, Edward :)";
-            string[] greetings = new string[] { greeting1, greeting2 };
-            return greeting2;
-         
+            return $"Hi, {name} :)";
+
         }
 
 
@@ -76,22 +73,8 @@ namespace csharp_fundamentals_methods.Main
 
         public int[] constructNumberArray(int lower, int upper)
         {
-            int arr1 = 1 - 3 + 1;
-            //int[] Arr1 = new int[arr1];
 
-            int arr2 = 10 - 13 + 1;
-            //int[] Arr2 = new int[arr2];
-
-            int arr3 = -1 - 1 + 1;
-            //int[] Arr3 = new int[arr3];
-
-
-
-
-
-            int[] resultArray = {arr1, arr2, arr3};
-
-            return resultArray;
+            return Enumerable.Range(lower, upper - lower + 1).ToArray();
 
         }
 
@@ -111,7 +94,15 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+
+            string shoutedPhrase = phrase.ToUpper(); 
+
+            for (int i = 0; i < number; i++)
+            {
+                shoutedPhrase += "!";
+            }
+
+            return shoutedPhrase;
         }
 
 
