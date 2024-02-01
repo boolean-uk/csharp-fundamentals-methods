@@ -17,9 +17,14 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minLeft)
         {
-            throw new NotImplementedException();
+            if (minLeft == 0) {
+                return "The cake is ready!";
+            } else if (minLeft > 0) {
+                return "The cake is still baking!";
+            }
+            return "The timer finished ages ago!";
         }
 
 
@@ -33,14 +38,22 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public int estimatePrepTime(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            int prepTime = v;
+            // every ingredient must be count with two
+            if (v == 0) {
+                prepTime = 2;
+            }
+            // return preptime multiplied with the amount of strings .Length
+            return prepTime * strings.Length;
         }
 
 
 
-        //TODO: Extension 3: calculateGramsOfSugar that accepts two parameters 1 an array of ingredients that will always contain 3 ingredients AND  2 the number of layers the cake has. The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.             The method should return the number of grams of sugar needed to make the cake.
+        //TODO: Extension 3: calculateGramsOfSugar that accepts two parameters 1 an array of ingredients that will always contain 3 ingredients AND
+        //2 the number of layers the cake has. The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.
+        //The method should return the number of grams of sugar needed to make the cake.
         /*  3.
             Create a method named calculateGramsOfSugar that accepts two parameters:
             - an array of ingredients that will always contain 3 ingredients
@@ -49,9 +62,15 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public int calculateGramsOfSugar(string[] strings, int v)
         {
-            throw new NotImplementedException();
+            // if suger cointains in the list of strings add 100 gr per layer
+            if (strings.Contains("sugar"))
+            {
+                // multiply 100 gr of suger per layer
+                return 100 * v;
+            }
+            return 0;
         }
 
 
