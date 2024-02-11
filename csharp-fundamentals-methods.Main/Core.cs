@@ -27,31 +27,38 @@ namespace csharp_fundamentals_methods.Main
         //TODO: 1. Create a method that accepts a name and returns a greeting      
         public string greet(string name)
         {
-            throw new NotImplementedException();
+           
+            return $"Hello {name}!";
         }
+
+    
 
         //TODO: 2. Increment a number
         /*
             Complete this method so that it increases the number given by 1 and returns the result
          */
         public int increment(int number)
-        {
-            throw new NotImplementedException();
-        }
+    {
+           
+        return number + 1;
+    }
 
-        //TODO: 3. Construct a friendly greeting
-        /*
-            Complete this method so that it accepts a name as an input and outputs a friendly greeting
-            with a smiley face. Example input and output:
-            Input  | Output
-            -------|-------
-            Nathan | Hi, Nathan :)
-            Edward | Hi, Edward :)
-         */
-        public string happilyGreet(string name)
+    //TODO: 3. Construct a friendly greeting
+    /*
+        Complete this method so that it accepts a name as an input and outputs a friendly greeting
+        with a smiley face. Example input and output:
+        Input  | Output
+        -------|-------
+        Nathan | Hi, Nathan :)
+        Edward | Hi, Edward :)
+     */
+    public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
-        }
+          
+        return $"Hi, {name} :)";
+
+
+    }
 
 
 
@@ -70,9 +77,13 @@ namespace csharp_fundamentals_methods.Main
         public int[] constructNumberArray(int lower, int upper)
         {
 
-            int[] resultArray = { };
+        int[] resultArray = new int[upper - lower + 1];
+        for (int i = lower, j = 0; i <= upper; i++, j++)
+        {
+            resultArray[j] = i;
+        }
 
-            return resultArray;
+        return resultArray;
 
         }
 
@@ -92,7 +103,13 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+            string shouted = phrase.ToUpper();
+
+            shouted += new string('!', number);
+
+            return shouted;
+        
+            
         }
 
 
