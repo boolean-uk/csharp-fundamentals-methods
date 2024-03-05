@@ -17,9 +17,23 @@ namespace csharp_fundamentals_methods.Main
         "The cake is still baking!" if there are any remaining minutes left,
         and "The timer finished ages ago!" if the remaining minutes is a negative number
      */
-        public double timerStatus(int v)
+        public string timerStatus(int minutes)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            if (minutes < 0)
+            {
+                return "The timer finished ages ago!";
+            }
+            else if (minutes > 0)
+            {
+                return "The cake is still baking!";
+            }
+            else
+            {
+                return "The cake is ready!";
+            }
+
+
         }
 
 
@@ -33,9 +47,21 @@ namespace csharp_fundamentals_methods.Main
             If a prep time of 0 is provided, the method should assume each ingredient takes 2 minutes to prepare.
          */
 
-        public double estimatePrepTime(string[] strings, int v)
+        public double estimatePrepTime(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            int totalTime = 0;
+            foreach (string ingredient in ingredients)
+            {
+                totalTime = totalTime + time;
+            }
+
+            if (totalTime == 0)
+            {
+                totalTime = 2 * ingredients.Length;
+            }
+
+            return totalTime;
         }
 
 
@@ -49,9 +75,18 @@ namespace csharp_fundamentals_methods.Main
             The method should return the number of grams of sugar needed to make the cake.
          */
 
-        public double calculateGramsOfSugar(string[] strings, int v)
+        public double calculateGramsOfSugar(string[] ingredients, int time)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+
+            if (ingredients.Contains("sugar"))
+            {
+                return 100 * time;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
 
