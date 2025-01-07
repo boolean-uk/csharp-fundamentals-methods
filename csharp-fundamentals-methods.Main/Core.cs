@@ -27,7 +27,7 @@ namespace csharp_fundamentals_methods.Main
         //TODO: 1. Create a method that accepts a name and returns a greeting
         public string greet(string name)
         {
-            throw new NotImplementedException();
+            return $"Hello {name}!";
         }
 
         //TODO: 2. Increment a number
@@ -36,7 +36,7 @@ namespace csharp_fundamentals_methods.Main
          */
         public int increment(int number)
         {
-            throw new NotImplementedException();
+            return number + 1;
         }
 
         //TODO: 3. Construct a friendly greeting
@@ -50,7 +50,7 @@ namespace csharp_fundamentals_methods.Main
          */
         public string happilyGreet(string name)
         {
-            throw new NotImplementedException();
+            return $"Hi, {name} :)";
         }
 
         //TODO: 4. Construct an array of numbers
@@ -67,9 +67,9 @@ namespace csharp_fundamentals_methods.Main
 
         public int[] constructNumberArray(int lower, int upper)
         {
-            int[] resultArray = { };
-
-            return resultArray;
+            int size = upper - lower;
+            if (size < 0) throw new ArgumentException("Lower should be a smaller number than upper!");
+            return Enumerable.Range(lower, size + 1).ToArray();
         }
 
         //TODO: 5. Shout at a dev
@@ -86,7 +86,7 @@ namespace csharp_fundamentals_methods.Main
 
         public string shout(string phrase, int number)
         {
-            return $"";
+            return $"{phrase.ToUpper()}{new string('!', number)}";
         }
     }
 }
