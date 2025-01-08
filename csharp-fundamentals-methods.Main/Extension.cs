@@ -20,7 +20,9 @@ namespace csharp_fundamentals_methods.Main
         */
         public string timerStatus(int timeLeftInMin)
         {
-            throw new NotImplementedException();
+            if (timeLeftInMin < 0) { return "The timer finished ages ago!"; }
+            else if (timeLeftInMin == 0) { return "The cake is ready!"; }
+            else { return "The cake is still baking!"; }
         }
 
         //TODO: Extension 2: Estimate Prep Time
@@ -35,7 +37,12 @@ namespace csharp_fundamentals_methods.Main
 
         public double estimatePrepTime(string[] ingredients, int prepTimePerIngredient)
         {
-            throw new NotImplementedException();
+            if (prepTimePerIngredient == 0)
+            {
+                prepTimePerIngredient = 2;
+            }
+            int numberOfIngredients = ingredients.Length;
+            return prepTimePerIngredient * numberOfIngredients;
         }
 
         //TODO: Extension 3: calculateGramsOfSugar that accepts two parameters 1 an array of ingredients that will always contain 3 ingredients AND  2 the number of layers the cake has. The cake will need 100g of sugar per layer, if that ingredient is present in the provided list of ingredients.             The method should return the number of grams of sugar needed to make the cake.
@@ -49,7 +56,14 @@ namespace csharp_fundamentals_methods.Main
 
         public double calculateGramsOfSugar(string[] ingredients, int numberOfCakeLayers)
         {
-            throw new NotImplementedException();
+            if (ingredients.Contains("sugar"))
+            {
+                return 100 * numberOfCakeLayers;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
